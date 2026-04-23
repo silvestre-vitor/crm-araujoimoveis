@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM</title>
+</head>
+<body>
+
+<h1>CRM rodando</h1>
+
+<button onclick="salvar()">Salvar Lead</button>
+
+<script>
+async function salvar() {
+  await fetch('/leads', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      nome: "Teste",
+      telefone: "123"
+    })
+  });
+
+  alert("salvo");
+}
+</script>
+
+</body>
+</html>
